@@ -4,6 +4,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* main colors */
+
+  --color-Bg: var(--Bg);
+  --color-Bg2: var(--Bg2);
+  --color-Bg3:var(--Bg3);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-text: var(--text);
+  --color-text2: var(--text2);
+  --color-text3:var(--text3);
+  --color-gray:var(--gray);
+
+  --font-inter: Inter, sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -14,7 +29,6 @@
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -42,14 +56,24 @@
 }
 
 :root {
+/* main colors */
+  --Bg: #ffffff;
+  --Bg2: #f5f6fa;
+  --Bg3:#d5d5d5;
+  --primary: #4880ff;
+  --primary-foreground: #fafafa;
+  --text: #0a0a0a;
+  --text2: #202224;
+  --text3:#ffffff;
+  --gray:#a6a6a6;
+
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: var(--Bg2);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -66,7 +90,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: var(--Bg);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -108,6 +132,26 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-Bg2 text-text;
+  }
+}
+@layer utilities{
+  .container{
+    @apply mx-auto px-4 lg:px-6;
+  }
+  .flex-center{
+    @apply flex items-center justify-center;
+  }
+  .primary-btn{
+    @apply bg-primary text-text3 px-6 py-4 rounded-lg cursor-pointer;
+  }
 }
 
 @layer base {
