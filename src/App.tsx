@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout/Layout";
 import Login from "./pages/Auth/Login/Login";
 import Bookings from "./pages/Bookings/Bookings";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ServiceDetails from "./pages/ServiceDetails/ServiceDetails";
 import Services from "./pages/Services/Services";
 import Users from "./pages/Users/Users";
 import Providers from "./Providers";
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: "services", element: <Services /> },
+      { path: "services/:id", element: <ServiceDetails /> },
       { path: "users", element: <Users /> },
       { path: "bookings", element: <Bookings /> },
     ],
